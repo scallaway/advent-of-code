@@ -21,12 +21,7 @@ let time0 = performance.now();
 // If we find a solution to our equations in the map, then set those values
 // and break out quickly.
 dataArr.some(([_, numberValue]) => {
-  if (data.get((numberValue - target).toString(10)) !== undefined) {
-    values = [numberValue, numberValue - target];
-    return true;
-  }
-
-  if (data.get((target - numberValue).toString(10)) !== undefined) {
+  if (data.get((target - numberValue).toString(10))) {
     values = [numberValue, target - numberValue];
     return true;
   }
